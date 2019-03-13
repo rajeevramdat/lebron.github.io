@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+
+<head>
+<link href='https://fonts.googleapis.com/css?family=Londrina+Shadow' rel='stylesheet' type='text/css'>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	
+<style>
+ul{padding: 10px;
+   background: rgba(0, 0, 0, 0.5);
+}
+li{display: inline;
+   padding: 0px 40px 0px 40px;
+   font-size: 18px;
+}
+button{color: blue;
+}
+h1{font-size: 70px;
+}
+img{margin: 40px 0px 0px 0px;
+    border: 7px solid white;
+    border-radius: 20px;
+    width: 20%;
+}
+body {
+  font-family: helvetica, sans-serif;
+  background: #232323;
+  text-align: center; /* added when removed header text-align */
+}
+div {
+  height: 300px;
+  position: relative;
+  margin: 40px 0 0 0;
+  border-radius: 12px;
+  margin: 40px auto;
+  max-width: 600px;
+}
+h1 {
+  font-family: 'Londrina Shadow', cursive;
+  text-align: center;
+  font-size: 75px;
+  color: #aaaaaa;
+  margin: 60px 0 0 0;
+}
+h2 {
+  text-align: center;
+  color: #bbbbbb;
+  margin: 0px 0 70px 0;
+}
+p {
+  color: rgba(255,255,255,1);
+  background: black;
+  background: linear-gradient(bottom, rgba(0,0,0,1), rgba(0,0,0,.4));
+  background: -webkit-linear-gradient(bottom, rgba(0,0,0,1), rgba(0,0,0,.4));
+  background: -moz-linear-gradient(bottom, rgba(0,0,0,1), rgba(0,0,0,.4));
+  padding: 10px;
+  line-height: 28px;
+  text-align: justify;
+  position: absolute;
+  bottom: 0;
+  margin: 0;
+  height: 30px;
+  transition: height .5s;
+  -webkit-transition: height .5s;
+  -moz-transition: height .5s;
+}
+small{opacity: 0;
+}
+.price {
+  float: right;
+}
+.show-description p{height: 150px;
+}
+.show-description small{opacity:1;
+}
+@media (max-width: 500px) {
+  h1{font-size: 50px;
+     margin-top: 20px;
+     line-height: 40px;
+  }
+  h2{font-size: 20px;
+     margin: 20px 0 30px 0;
+  }
+  div{margin: 20px 12px 0 12px;
+  }
+  p{font-size: 20px;
+    line-height: 24px;
+  }
+  small{font-size: 16px;
+  }
+}
+</style>
+</head>
+
+<body onload="foods()">
+
+<ul><li><button onclick="foods()">Foods</button></li><li><button onclick="desserts()">Desserts</button></li><li><button onclick="foods()">Foods</button></li></ul><h1>Coolio Place</h1><h2>a New York City eatery</h2>
+
+<div id="whatever"> 
+
+<!-- This is where the divs will be created -->
+
+</div>
+
+<script>
+	food_divs = [
+			'<div class="item" onclick=this.classList.toggle("show-description")><p>Thali <span class="price">$10</span> <br /> <small>A combination of different curries and sauces served with rice and roti. Enjoy with a nice cold drink!</small></p></div>',
+			'<div class="item" onclick=this.classList.toggle("show-description")><p>Snacks <span class="price">$3</span> <br /> <small>Try out various snacks that come with a variety of dipping sauces for your satisfaction. I guarantee you will love them.</small></p></div>',
+			'<div class="item" onclick=this.classList.toggle("show-description")><p>Dosa <span class="price">$9</span><br /> <small>Our dosas are filled to the brim, and they come with sauce flavors that will delight anyone. Varieties: Masala, Mysore Masala, etc.</small></p></div>',
+	]
+	
+	food_images = [
+		'url("https://media.istockphoto.com/photos/indian-thali-picture-id464597636?k=6&m=464597636&s=612x612&w=0&h=uauaXSMqWDpFDSbr98Vo7_yaAOSRJ3ksVryD0mH81bk=")',
+		'url("http://s3.india.com/wp-content/uploads/2015/05/10-snacks.jpg")',
+		'url("https://www.wikihow.com/images/thumb/4/41/Make-a-Dosa-Step-20.jpg/aid127225-v4-728px-Make-a-Dosa-Step-20.jpg")',
+	]
+	
+	dessert_divs = [
+			'<div class="item" onclick=this.classList.toggle("show-description")><p>Canolis <span class="price">$10</span> <br /> <small>A combination of different curries and sauces served with rice and roti. Enjoy with a nice cold drink!</small></p></div>',
+			'<div class="item" onclick=this.classList.toggle("show-description")><p>Eclairs <span class="price">$3</span> <br /> <small>Try out various snacks that come with a variety of dipping sauces for your satisfaction. I guarantee you will love them.</small></p></div>',
+			'<div class="item" onclick=this.classList.toggle("show-description")><p>Cake <span class="price">$9</span><br /> <small>Our dosas are filled to the brim, and they come with sauce flavors that will delight anyone. Varieties: Masala, Mysore Masala, etc.</small></p></div>',
+	]
+	
+	dessert_images = [
+		'url("https://food.fnr.sndimg.com/content/dam/images/food/fullset/2014/10/1/0/KC0312H_Cannolis_s4x3.jpg.rend.hgtvcom.406.305.suffix/1412190181092.jpeg")',
+		'url("http://frostingandasmile.com/wp-content/uploads/2014/04/horizontal-web.jpg")',
+		'url("https://sallysbakingaddiction.com/wp-content/uploads/2018/11/black-forest-cake-chocolate-ganache.jpg")',
+	]
+
+
+	function foods() {
+		something = document.getElementById("whatever")
+		something.innerHTML = ''
+		items = document.getElementsByClassName("item")
+		for (i=0; i<3; i=i+1) {
+			something.innerHTML += food_divs[i]
+			items[i].style.background = food_images[i]
+			items[i].style.backgroundSize = "100% 100%"
+		}		
+	}
+
+	function desserts() { 
+		something = document.getElementById("whatever")
+		something.innerHTML = ''
+		items = document.getElementsByClassName("item")
+		for (i=0; i<3; i=i+1) {
+			something.innerHTML += dessert_divs[i]
+			items[i].style.background = dessert_images[i]
+			items[i].style.backgroundSize = "100% 100%"
+		}
+	}
+</script>
+
+</body>
