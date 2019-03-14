@@ -1,6 +1,7 @@
-<!DOCTYPE html>
+<!DOCTYPE html>c
 
 <head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <link href='https://fonts.googleapis.com/css?family=Londrina+Shadow' rel='stylesheet' type='text/css'>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	
@@ -93,7 +94,7 @@ small{opacity: 0;
 
 <body onload="foods()">
 
-<ul><li><button onclick="foods()">Foods</button></li><li><button onclick="desserts()">Desserts</button></li><li><button onclick="foods()">Foods</button></li></ul><h1>Coolio Place</h1><h2>a New York City eatery</h2>
+<ul><li><button onclick="LBJ()">LBJ</button></li><li><button onclick="JRSMITH()">JRSMITH</button></li><li><button onclick="KYRIE()">KYRIE</button></li></ul><h1>basketball arena</h1><h2> LEBRON KYRIE AND JRSMITH  THE BEST PLAYERS</h2>
 
 <div id="whatever"> 
 
@@ -102,49 +103,73 @@ small{opacity: 0;
 </div>
 
 <script>
-	food_divs = [
-			'<div class="item" onclick=this.classList.toggle("show-description")><p>Thali <span class="price">$10</span> <br /> <small>A combination of different curries and sauces served with rice and roti. Enjoy with a nice cold drink!</small></p></div>',
-			'<div class="item" onclick=this.classList.toggle("show-description")><p>Snacks <span class="price">$3</span> <br /> <small>Try out various snacks that come with a variety of dipping sauces for your satisfaction. I guarantee you will love them.</small></p></div>',
-			'<div class="item" onclick=this.classList.toggle("show-description")><p>Dosa <span class="price">$9</span><br /> <small>Our dosas are filled to the brim, and they come with sauce flavors that will delight anyone. Varieties: Masala, Mysore Masala, etc.</small></p></div>',
+	LBJ_divs = [
+			'<div class="item" onclick=this.classList.toggle("show-description")><p>shoes<span class="price">$10</span> <br /> <small>A combination of different curries and sauces served with rice and roti. Enjoy with a nice cold drink!</small></p></div>',
+			'<div class="item" onclick=this.classList.toggle("show-description")><p>shoes <span class="price">$3</span> <br /> <small>Try out various snacks that come with a variety of dipping sauces for your satisfaction. I guarantee you will love them.</small></p></div>',
+			'<div class="item" onclick=this.classList.toggle("show-description")><p>shoes <span class="price">$9</span><br /> <small>Our dosas are filled to the brim, and they come with sauce flavors that will delight anyone. Varieties: Masala, Mysore Masala, etc.</small></p></div>',
 	]
 	
-	food_images = [
-		'url("https://media.istockphoto.com/photos/indian-thali-picture-id464597636?k=6&m=464597636&s=612x612&w=0&h=uauaXSMqWDpFDSbr98Vo7_yaAOSRJ3ksVryD0mH81bk=")',
-		'url("http://s3.india.com/wp-content/uploads/2015/05/10-snacks.jpg")',
-		'url("https://www.wikihow.com/images/thumb/4/41/Make-a-Dosa-Step-20.jpg/aid127225-v4-728px-Make-a-Dosa-Step-20.jpg")',
+	KYRIE_divs = [
+			'<div class="item" onclick=this.classList.toggle("show-description")><p>shoes<span class="price">$10</span> <br /> <small>A combination of different curries and sauces served with rice and roti. Enjoy with a nice cold drink!</small></p></div>',
+			'<div class="item" onclick=this.classList.toggle("show-description")><p>shoes<span class="price">$3</span> <br /> <small>Try out various snacks that come with a variety of dipping sauces for your satisfaction. I guarantee you will love them.</small></p></div>',
+			'<div class="item" onclick=this.classList.toggle("show-description")><p>shoes <span class="price">$9</span><br /> <small>Our dosas are filled to the brim, and they come with sauce flavors that will delight anyone. Varieties: Masala, Mysore Masala, etc.</small></p></div>',
 	]
 	
-	dessert_divs = [
-			'<div class="item" onclick=this.classList.toggle("show-description")><p>Canolis <span class="price">$10</span> <br /> <small>A combination of different curries and sauces served with rice and roti. Enjoy with a nice cold drink!</small></p></div>',
-			'<div class="item" onclick=this.classList.toggle("show-description")><p>Eclairs <span class="price">$3</span> <br /> <small>Try out various snacks that come with a variety of dipping sauces for your satisfaction. I guarantee you will love them.</small></p></div>',
-			'<div class="item" onclick=this.classList.toggle("show-description")><p>Cake <span class="price">$9</span><br /> <small>Our dosas are filled to the brim, and they come with sauce flavors that will delight anyone. Varieties: Masala, Mysore Masala, etc.</small></p></div>',
+	JRSMITH_divs = [
+			'<div class="item" onclick=this.classList.toggle("show-description")><p>pictures <span class="price">$10</span> <br /> <small>A combination of different curries and sauces served with rice and roti. Enjoy with a nice cold drink!</small></p></div>',
+			'<div class="item" onclick=this.classList.toggle("show-description")><p>pictures <span class="price">$3</span> <br /> <small>Try out various snacks that come with a variety of dipping sauces for your satisfaction. I guarantee you will love them.</small></p></div>',
+			'<div class="item" onclick=this.classList.toggle("show-description")><p>picture <span class="price">$9</span><br /> <small>Our dosas are filled to the brim, and they come with sauce flavors that will delight anyone. Varieties: Masala, Mysore Masala, etc.</small></p></div>',
 	]
 	
-	dessert_images = [
-		'url("https://food.fnr.sndimg.com/content/dam/images/food/fullset/2014/10/1/0/KC0312H_Cannolis_s4x3.jpg.rend.hgtvcom.406.305.suffix/1412190181092.jpeg")',
-		'url("http://frostingandasmile.com/wp-content/uploads/2014/04/horizontal-web.jpg")',
-		'url("https://sallysbakingaddiction.com/wp-content/uploads/2018/11/black-forest-cake-chocolate-ganache.jpg")',
+	LBJ_images = [
+		'url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSaETKoZ1cQyogOhk7riUWSMISdQKny9WKvOpPorFVl5aTiErMP")',
+		'url("https://images.offerup.com/qLSTqhOD_60l9f23QXjx0d5it6Q=/600x800/3d8b/3d8b8f2210a042278596ad48c37a24cc.jpg")',
+		'url("https://img.auctiva.com/imgdata/7/7/9/3/9/5/webimg/923618731_tp.jpg")',
+	]
+	JRSMITH_images = [
+		'url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSaETKoZ1cQyogOhk7riUWSMISdQKny9WKvOpPorFVl5aTiErMP")',
+		'url("https://images.offerup.com/qLSTqhOD_60l9f23QXjx0d5it6Q=/600x800/3d8b/3d8b8f2210a042278596ad48c37a24cc.jpg")',
+		'url("https://img.auctiva.com/imgdata/7/7/9/3/9/5/webimg/923618731_tp.jpg")',
+	]
+
+	KYRIE_images = [
+		'url("https://cdn.vox-cdn.com/thumbor/fUnydqDImjk0EPZDrPn1x9XAPOQ=/0x0:3000x2000/1200x800/filters:focal(1333x224:1813x704)/cdn.vox-cdn.com/uploads/chorus_image/image/61555951/KyrieStayingInBoston_Getty_Ringer.0.jpg")',
+		'url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkkaoLQizbh7uCU46c9feQBp4vlPYpmDeJ1e07ixpPbu_wv3Rd")',
+		'url("https://m.media-amazon.com/images/M/MV5BMTczMTczNDQ3Nl5BMl5BanBnXkFtZTgwNDI3MDgzMzI@._V1_.jpg")',
 	]
 
 
-	function foods() {
+	function LBJ() {
 		something = document.getElementById("whatever")
 		something.innerHTML = ''
 		items = document.getElementsByClassName("item")
 		for (i=0; i<3; i=i+1) {
-			something.innerHTML += food_divs[i]
-			items[i].style.background = food_images[i]
+			something.innerHTML += LBJ_divs[i]
+			items[i].style.background = LBJ_images[i]
 			items[i].style.backgroundSize = "100% 100%"
 		}		
 	}
 
-	function desserts() { 
+	function JRSMITH() { 
+		//alert("JR")
 		something = document.getElementById("whatever")
 		something.innerHTML = ''
 		items = document.getElementsByClassName("item")
 		for (i=0; i<3; i=i+1) {
-			something.innerHTML += dessert_divs[i]
-			items[i].style.background = dessert_images[i]
+			something.innerHTML += JRSMITH_divs[i]
+			items[i].style.background = JRSMITH_images[i]
+			items[i].style.backgroundSize = "100% 100%"
+		}
+	}
+	
+	function KYRIE() { 
+		//alert("Kyrie")
+		something = document.getElementById("whatever")
+		something.innerHTML = ''
+		items = document.getElementsByClassName("item")
+		for (i=0; i<3; i=i+1) {
+			something.innerHTML += KYRIE_divs[i]
+			items[i].style.background = KYRIE_images[i]
 			items[i].style.backgroundSize = "100% 100%"
 		}
 	}
